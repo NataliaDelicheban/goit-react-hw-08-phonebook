@@ -10,4 +10,4 @@ export const getFilteredContacts = ({ contacts, filter }) => {
         return normalizedName.includes(normalizedFilter)
     });
     return result;
-}
+};

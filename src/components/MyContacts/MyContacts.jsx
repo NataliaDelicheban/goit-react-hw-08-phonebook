@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
+import Container from './Container/Container';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import {Filter} from './Filter/Filter';
@@ -11,7 +12,9 @@ import { setFilter } from 'redux/filter/filter-actions';
 import { getFilteredContacts } from 'redux/contacts/contacts-selectors';
 import { getFilter } from 'redux/filter/filter-selectors';
 
-export function App() {
+import css from "../MyContacts/my-contacts.module.css";
+
+const MyContacts =() => {
   const contacts = useSelector(getFilteredContacts);
   const filter = useSelector(getFilter);
  
@@ -34,12 +37,18 @@ export function App() {
   }
 
     return (
-      <>
-        <h1>Phonebook</h1>
-        <ContactForm onSubmit={onAddContact}/>
-        <h2>Contacts</h2>
+      <div className={css.contacts}>
+        <Container title='Create New Contact'>
+        {/* <h1>Phonebook</h1> */}
+        <ContactForm onSubmit={onAddContact} />
+        </Container>
+        <Container title='Contacts'>
+        {/* <h2>Contacts</h2> */}
         <Filter onChange={onSetFilter} value={filter} />
-        <ContactList contacts={contacts} removeContact={onRemoveContact}/>
-      </>
+        <ContactList contacts={contacts} removeContact={onRemoveContact} />
+        </Container>
+      </div>
     );
 }
+
+export default MyContacts;
