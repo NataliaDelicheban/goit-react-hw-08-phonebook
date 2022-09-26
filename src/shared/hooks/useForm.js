@@ -5,7 +5,7 @@ const useForm = ({ initialState, onSubmit }) => {
 
     const handleChange = ({target}) => {
         const { name, value, type } = target;
-        const newValue = type === 'type' ? type : value;
+        const newValue  = type === 'type' ? type : value;
         setState(prevState => ({
             ...prevState,
             [name]: newValue,

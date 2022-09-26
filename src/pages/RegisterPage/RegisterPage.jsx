@@ -2,7 +2,7 @@ import {useDispatch, useSelector } from "react-redux";
 
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 
-import { signup } from "redux/auth/auth-operations";
+import { signup } from '../../redux/auth/auth-operations';
 
 import { getAuthError } from "redux/auth/auth-selectors";
 

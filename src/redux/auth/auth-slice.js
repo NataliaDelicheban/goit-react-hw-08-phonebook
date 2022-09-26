@@ -12,7 +12,8 @@ const initialState = {
 
 const authSlice = createSlice({
     name: "auth",
-    initialState,
+    initialState: initialState,
+    reducers: {},
     extraReducers: {
         [signup.pending]: (store) => {
             store.loading = true;
@@ -62,9 +63,7 @@ const authSlice = createSlice({
         },
         [current.fulfilled]: (store, { payload }) => {
             store.loading = false;
-            // store.user = payload.user;
             store.user = payload;
-            // store.token = payload.token;
             store.isLogin = true;
         },
         [current.rejected]: (store, { payload }) => {

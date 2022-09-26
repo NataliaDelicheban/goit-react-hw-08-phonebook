@@ -1,6 +1,6 @@
 import {useDispatch, useSelector } from "react-redux";
 import { getAuthError } from "redux/auth/auth-selectors";
-import { login } from "shared/api/auth";
+import { login } from '../../redux/auth/auth-operations';
 
 import LoginForm from "components/LoginForm/LoginForm";
 
